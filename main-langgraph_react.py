@@ -11,6 +11,10 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from utils.qwen_llm_loader import QwenLLM
 
+
+from dotenv import load_dotenv
+load_dotenv()
+
 # from langchain_core.messages import HumanMessage
 
 
@@ -20,7 +24,9 @@ from utils.qwen_llm_loader import QwenLLM
 os.environ["GROQ_API_KEY"] = os.environ.get("GROQ_API_KEY")
 
 
-chat_llm,llm = QwenLLM().get_chat_and_base_model()
+#hugging face pipeline async not supported by langchain_groq for mcp client
+
+# chat_llm,llm = QwenLLM().get_chat_and_base_model()
 
 
 llm = ChatGroq(
@@ -44,7 +50,7 @@ async def main():
             tools = await load_mcp_tools(session)
 
             # Create and run the agent
-            agent = create_react_agent(chat_llm, tools)
+            agent = create_react_agent(llm, tools)
             agent_response = await agent.ainvoke({"messages": "what is 54 + 2 * 3 ?"})
             print(agent_response["messages"][-1].content)
 
