@@ -1,12 +1,14 @@
 import asyncio
 import os
 
+from dotenv import load_dotenv
 # from utils.qwen_llm_loader import QwenLLM
 from langchain_groq import ChatGroq
 from langchain_mcp_adapters.client import MultiServerMCPClient
-
 # from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.prebuilt import create_react_agent
+
+load_dotenv()
 
 # from langchain_core.messages import HumanMessage
 

@@ -1,16 +1,16 @@
 import asyncio
+import os
+
+from autogen_agentchat.agents import AssistantAgent
+from autogen_agentchat.ui import Console
+from autogen_core import CancellationToken
+from autogen_core.models import ModelFamily
 # from pathlib import Path
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_ext.tools.mcp import StdioServerParams, mcp_server_tools
-from autogen_agentchat.agents import AssistantAgent
-from autogen_core import CancellationToken
-from autogen_agentchat.ui import Console
 # from autogen_ext.tools.mcp import SseMcpToolAdapter, SseServerParams
 # import os
 from dotenv import load_dotenv
-from autogen_core.models import ModelFamily
-import os
-
 
 # Get environment variables
 load_dotenv()
