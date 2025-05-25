@@ -60,17 +60,6 @@ test
 
 ## Usage
 
-### Running the Math Server
-To start the math server:
-```sh
-python servers/math_server.py
-```
-
-### Running the Release Assist Workflow
-To run the release assist workflow:
-```sh
-python main-release-assist.py
-```
 
 ### Running the LangGraph React Agent
 To run the LangGraph React agent:
@@ -82,6 +71,13 @@ python main-langgraph_react.py
 To run the LangGraph state-based agent:
 ```sh
 python main-langgraph_states.py
+```
+
+
+### Running the LangGraph React Agent for release asist client
+To run the LangGraph state-based agent:
+```sh
+python main-release-assist.py
 ```
 
 ## Adding New Tools or Servers
