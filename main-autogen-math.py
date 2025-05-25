@@ -9,6 +9,7 @@ from autogen_agentchat.ui import Console
 # import os
 from dotenv import load_dotenv
 from autogen_core.models import ModelFamily
+import os
 
 
 # Get environment variables
@@ -18,7 +19,7 @@ load_dotenv()
 ## GLOBAL SETTINGS
 BASE_URL = "https://api.groq.com/openai/v1"
 MODEL_NAME = "qwen-qwq-32b"
-API_KEY = "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"
+API_KEY = os.environ.get("GROQ_API_KEY")
 
 # Initialize the model client
 model_client = OpenAIChatCompletionClient(

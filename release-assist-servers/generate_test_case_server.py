@@ -13,9 +13,7 @@ def generate_testcase(impact_analysis: str) -> str:
     This tool takes an impact analysis report for one or more defects and produces a list of relevant test cases and return response in a raw string format.
     This tool is ideal for QA automation planning, manual testing, and CI/CD test coverage validation."""
 
-    os.environ["GROQ_API_KEY"] = (
-        "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"
-    )
+    os.environ["GROQ_API_KEY"] = os.environ.get("GROQ_API_KEY")
 
     # chat_llm,llm = QwenLLM().get_chat_and_base_model()
 

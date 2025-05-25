@@ -55,7 +55,7 @@ MCP Test is a Python-based project that leverages advanced AI models and tools t
 4. Set up environment variables:
    Create a `.env` file and add your Groq API key:
    ```
-   GROQ_API_KEY=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
+   GROQ_API_KEY=<TOKEN>
    ```
 
 ## Usage

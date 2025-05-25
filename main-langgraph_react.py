@@ -17,7 +17,7 @@ from utils.qwen_llm_loader import QwenLLM
 
 
 
-os.environ["GROQ_API_KEY"] = "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"
+os.environ["GROQ_API_KEY"] = os.environ.get("GROQ_API_KEY")
 
 
 chat_llm,llm = QwenLLM().get_chat_and_base_model()

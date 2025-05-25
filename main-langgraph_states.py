@@ -12,7 +12,7 @@ import os
 # model = init_chat_model("openai:gpt-4.1")
 
 
-os.environ["GROQ_API_KEY"] = "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"
+os.environ["GROQ_API_KEY"] = os.environ.get("GROQ_API_KEY")
 
 llm = ChatGroq(
     model="qwen-qwq-32b",
