@@ -1,6 +1,7 @@
 import asyncio
 import os
 
+from dotenv import load_dotenv
 # from utils.qwen_llm_loader import QwenLLM
 from langchain_groq import ChatGroq
 # from langchain_mcp_adapters.client import MultiServerMCPClient
@@ -11,8 +12,6 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from utils.qwen_llm_loader import QwenLLM
 
-
-from dotenv import load_dotenv
 load_dotenv()
 
 # from langchain_core.messages import HumanMessage

@@ -1,10 +1,13 @@
 import asyncio
 import os
 
+from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langgraph.graph import START, MessagesState, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
+
+load_dotenv()
 
 # from utils.qwen_llm_loader import QwenLLM
 
