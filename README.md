@@ -43,11 +43,18 @@ MCP Test is a Python-based project that leverages advanced AI models and tools t
    ```sh
    git clone https://github.com/your-repo/mcp-test.git
    cd mcp-test
+   # Create virtual environment using uv
+   uv venv --python 3.12
+
+   # Activate the virtual environment
+   source .venv/bin/activate  # On macOS/Linux
+   # OR
+   .\.venv\Scripts\activate  # On Windows
    ```
-test
 2. Install dependencies:
    ```sh
-   pip install -r requirements.txt
+   # Install project dependencies
+   uv pip install -e .
    ```
 
 3. Ensure you have Python 3.12 installed (as specified in `.python-version`).
