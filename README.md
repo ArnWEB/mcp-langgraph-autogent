@@ -87,6 +87,13 @@ To run the LangGraph state-based agent:
 python main-release-assist.py
 ```
 
+
+### Running the Autogen  Agent for basic maths
+To run the LangGraph state-based agent:
+```sh
+python main-autogen-math.py
+```
+
 ## Adding New Tools or Servers
 
 1. Create a new server in the `servers/` or `release-assist-servers/` directory.
