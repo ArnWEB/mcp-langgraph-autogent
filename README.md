@@ -1,4 +1,4 @@
-# MCP Test
+# mcp-langgraph-autogent
 
 MCP Test is a Python-based project that leverages advanced AI models and tools to perform tasks such as mathematical computations, impact analysis, test case generation, and more. The project integrates with Groq's AI models and provides a modular architecture for building intelligent agents and tools.
 
