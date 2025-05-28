@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_mcp_adapters.client import MultiServerMCPClient
+from langchain_openai import ChatOpenAI
 from langgraph.graph import START, MessagesState, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
 
@@ -23,6 +24,17 @@ llm = ChatGroq(
     temperature=0.0,
     max_retries=2,
     # other params...
+)
+
+
+inference_server_url = "http://localhost:8000/v1"
+
+llm = ChatOpenAI(
+    model="/app/model",
+    openai_api_key="EMPTY",
+    openai_api_base=inference_server_url,
+    max_tokens=100,
+    temperature=0,
 )
 
 # chat_llm,llm = QwenLLM().get_chat_and_base_model()
@@ -58,7 +70,7 @@ async def main():
     )
     builder.add_edge("tools", "call_model")
     graph = builder.compile()
-    math_response = await graph.ainvoke({"messages": "Test two number 5,7"})
+    math_response = await graph.ainvoke({"messages": "Add two number 5,7"})
     # weather_response = await graph.ainvoke({"messages": "what is the weather in nyc?"})
     print(math_response["messages"][-1].content)
 

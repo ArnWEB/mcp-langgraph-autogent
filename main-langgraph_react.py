@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 # from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain_mcp_adapters.tools import load_mcp_tools
+from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 
 from mcp import ClientSession, StdioServerParameters
@@ -28,11 +29,21 @@ os.environ["GROQ_API_KEY"] = os.environ.get("GROQ_API_KEY")
 # chat_llm,llm = QwenLLM().get_chat_and_base_model()
 
 
-llm = ChatGroq(
-    model="qwen-qwq-32b",
-    temperature=0.0,
-    max_retries=2,
-    # other params...
+# llm = ChatGroq(
+#     model="qwen-qwq-32b",
+#     temperature=0.0,
+#     max_retries=2,
+#     # other params...
+# )
+
+inference_server_url = "http://localhost:8000/v1"
+
+llm = ChatOpenAI(
+    model="Qwen/Qwen2.5-0.5B-Instruct",
+    openai_api_key="EMPTY",
+    openai_api_base=inference_server_url,
+    max_tokens=100,
+    temperature=0,
 )
 
 
@@ -50,7 +61,7 @@ async def main():
 
             # Create and run the agent
             agent = create_react_agent(llm, tools)
-            agent_response = await agent.ainvoke({"messages": "what is 54 + 2 * 3 ?"})
+            agent_response = await agent.ainvoke({"messages": "Test two numbers 1 and 2"})
             print(agent_response["messages"][-1].content)
 
 

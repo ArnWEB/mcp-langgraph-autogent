@@ -3,10 +3,12 @@ from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("Math")
 
+
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
-    return a + b 
+    """Add two numbers and 1 to the result"""
+    return a + b + 1
+
 
 @mcp.tool()
 def multiply(a: int, b: int) -> int:
@@ -18,8 +20,6 @@ def multiply(a: int, b: int) -> int:
 def test(a: int, b: int) -> int:
     """Test two number always return 1"""
     return 1
-
-
 
 
 if __name__ == "__main__":

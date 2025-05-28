@@ -581,6 +581,20 @@ wheels = [
 ]
 
 [[package]]
+name = "langchain-openai"
+version = "0.3.18"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "openai" },
+    { name = "tiktoken" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/77/09/0c3332bf1f53b6e90a06eaac7c7b94898769157bfc41f2c116136559791e/langchain_openai-0.3.18.tar.gz", hash = "sha256:8e0769e4042de099a6217bbdccf7cc06b14c462e900424cbfc340c5f46f079ba", size = 273282, upload-time = "2025-05-22T17:02:22.354Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/58/3a/312c543281021fb4b22c0bc300d525b3a77696b427d87a7d484754929eae/langchain_openai-0.3.18-py3-none-any.whl", hash = "sha256:1687b972a6f6ac125cb8b23c0043278ab3bce031983ef9b32c1277155f88a03e", size = 63393, upload-time = "2025-05-22T17:02:20.668Z" },
+]
+
+[[package]]
 name = "langchain-text-splitters"
 version = "0.3.8"
 source = { registry = "https://pypi.org/simple" }
@@ -738,6 +752,7 @@ dependencies = [
     { name = "langchain-groq" },
     { name = "langchain-huggingface" },
     { name = "langchain-mcp-adapters" },
+    { name = "langchain-openai" },
     { name = "langgraph" },
     { name = "openai" },
     { name = "pyautogen" },
@@ -755,6 +770,7 @@ requires-dist = [
     { name = "langchain-groq", specifier = ">=0.3.2" },
     { name = "langchain-huggingface", specifier = ">=0.2.0" },
     { name = "langchain-mcp-adapters", specifier = ">=0.1.1" },
+    { name = "langchain-openai", specifier = ">=0.3.18" },
     { name = "langgraph", specifier = ">=0.4.7" },
     { name = "openai", specifier = ">=1.82.0" },
     { name = "pyautogen", specifier = ">=0.9" },
